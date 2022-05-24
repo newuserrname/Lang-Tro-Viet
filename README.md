@@ -25,7 +25,7 @@ Trường Đại học Công nghệ Thông tin & Truyền Thông Việt - Hàn, 
 - **[1. clone project --> install grade]**
 - **[2. List grade using in project:]**
 - implementation 'com.google.android.material:material:1.6.0'
-- implementation 'com.android.volley:volley:1.2.1' :Api
+- implementation 'com.android.volley:volley:1.2.1' : Api
 - implementation 'de.hdodenhof:circleimageview:3.1.0' : A fast circular ImageView perfect for profile images
 - implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 - implementation 'com.squareup.picasso:picasso:2.8' : Use the Picasso library to load images
