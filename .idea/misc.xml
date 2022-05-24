@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1995" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/drawable/bg_bottomnav.xml" value="0.1835" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/drawable/borderimg.xml" value="0.1735" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/drawable/btn_drb.xml" value="0.1835" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/drawable/ic_baseline_person_outline_24.xml" value="0.1835" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1995" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/drawable/input_bg.xml" value="0.215" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/drawable/txt_background.xml" value="0.1735" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/font/.xml" value="0.28958333333333336" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/font/aldrich.xml" value="0.28958333333333336" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/font/vibur.xml" value="0.28958333333333336" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/layout/activity_add_post.xml" value="0.259375" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/layout/activity_auth.xml" value="0.259375" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/layout/activity_home.xml" value="0.259375" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/layout/activity_main.xml" value="0.259375" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/layout/activity_on_board.xml" value="0.1" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/layout/activity_user_info.xml" value="0.259375" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/layout/layout_account.xml" value="0.259375" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/layout/layout_home.xml" value="0.259375" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/layout/layout_post.xml" value="0.259375" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/layout/layout_register.xml" value="0.259375" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/layout/layout_sign.xml" value="0.259375" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/layout/register.xml" value="0.259375" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/layout/view_pager.xml" value="0.259375" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/layout/view_paper.xml" value="0.1" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/menu/menu_main.xml" value="0.259375" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/menu/menu_sreach.xml" value="0.259375" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1995" />
+        <entry key="..\:/Documents/LangTroViet/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1995" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

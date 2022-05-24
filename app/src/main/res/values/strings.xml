@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">LangTro Viet</string>
+    <string-array name="district">
+        <item>Ngũ Hành Sơn</item>
+        <item>Liên Chiểu</item>
+        <item>Hòa Vang</item>
+        <item>Thanh Khê</item>
+        <item>Hải Châu</item>
+        <item>Sơn Trà</item>
+        <item>Cẩm lệ</item>
+    </string-array>
+    <string-array name="category">
+        <item>Nhà trọ cho thuê</item>
+        <item>Tìm người ở ghép</item>
+        <item>Nhà nguyên căn</item>
+        <item>Chung cư</item>
+        <item>Cho thuê căn hộ</item>
+        <item>Cho thuê căn hộ mini</item>
+        <item>Cho thuê căn hộ dịch vụ</item>
+    </string-array>
+</resources>

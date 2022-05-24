@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddPostActivity">
+    
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title=" "
+        android:elevation="1dp">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:layout_marginRight="12dp"
+            app:tint="@color/colorBlack"
+            android:onClick="cancelPost"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tin mới"
+            android:textSize="20sp"
+            android:textColor="@color/colorBlack"/>
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:layout_marginTop="6dp">
+
+            <ImageView
+                android:id="@+id/imgAddPost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:text="Thêm ảnh"
+                android:textColor="@color/colorPrimary"
+                android:gravity="center_horizontal"
+                android:onClick="changeImages"/>
+
+            <EditText
+                android:id="@+id/txtTitleAddPost"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="left"
+                android:inputType="textMultiLine"
+                android:textSize="20sp"
+                android:hint="Tiêu đề"
+                android:padding="3dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="@color/colorPrimary"/>
+
+            <EditText
+                android:id="@+id/txtAddressAddPost"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="left"
+                android:inputType="textMultiLine"
+                android:textSize="18sp"
+                android:hint="Nhập địa chỉ"
+                android:padding="3dp"
+                android:layout_marginBottom="3dp" />
+
+            <EditText
+                android:id="@+id/txtPriceAddPost"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="left"
+                android:inputType="number"
+                android:textSize="18sp"
+                android:hint="Nhập giá phòng ...vnđ"
+                android:padding="3dp"
+                android:layout_marginBottom="3dp" />
+
+            <EditText
+                android:id="@+id/txtAreaAddPost"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="left"
+                android:inputType="number"
+                android:textSize="18sp"
+                android:hint="Diện tích m2"
+                android:padding="3dp"
+                android:layout_marginBottom="3dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="Quận/Huyện:"
+                android:textSize="15sp"/>
+            <Spinner
+                android:id="@+id/spnDistrictAddPost"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:entries="@array/district"
+                android:spinnerMode="dropdown" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:textSize="15sp"
+                android:text="Danh mục:"/>
+            <Spinner
+                android:id="@+id/spnCategoryAddPost"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:entries="@array/category"
+                android:spinnerMode="dropdown" />
+
+            <EditText
+                android:id="@+id/txtPhoneAddPost"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="left"
+                android:inputType="number"
+                android:textSize="18sp"
+                android:hint="Số điện thoại"
+                android:padding="3dp"
+                android:layout_marginBottom="3dp" />
+
+            <EditText
+                android:id="@+id/txtDescAddPost"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:inputType="textMultiLine"
+                android:gravity="left"
+                android:hint="Thông tin mô tả..."
+                android:textSize="15sp"
+                android:padding="8dp"
+                android:background="@drawable/txt_background"/>
+
+            <Button
+                android:id="@+id/btnAddPost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/btn_drb"
+                android:text="Đăng tin"
+                android:textSize="18sp"
+                android:textColor="@color/white"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
