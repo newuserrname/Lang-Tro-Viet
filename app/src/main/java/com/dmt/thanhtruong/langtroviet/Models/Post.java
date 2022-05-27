@@ -1,8 +1,8 @@
 package com.dmt.thanhtruong.langtroviet.Models;
 
 public class Post {
-    private int id, comments, count_view, price, area;
-    private String title, description, address, phone, date, images;
+    private int id, comments, count_view;
+    private String title, description, address, phone, date, images, price, area;
     private User user;
     private boolean selfLike;
 
@@ -10,14 +10,14 @@ public class Post {
         this.id = id;
         this.comments = comments;
         this.count_view = count_view;
-        this.price = price;
-        this.area = area;
         this.title = title;
         this.description = description;
         this.address = address;
         this.phone = phone;
         this.date = date;
         this.images = images;
+        this.price = price;
+        this.area = area;
         this.user = user;
         this.selfLike = selfLike;
     }
@@ -44,22 +44,6 @@ public class Post {
 
     public void setCount_view(int count_view) {
         this.count_view = count_view;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public int getArea() {
-        return area;
-    }
-
-    public void setArea(int area) {
-        this.area = area;
     }
 
     public String getTitle() {
@@ -108,6 +92,22 @@ public class Post {
 
     public void setImages(String images) {
         this.images = images;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
     }
 
     public User getUser() {

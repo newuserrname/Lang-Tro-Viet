@@ -3,18 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item android:id="@+id/item_edit"
-        android:title=" "
-        android:icon="@drawable/ic_baseline_edit_24"
+        android:title="Sửa tin"
         app:showAsAction="never"/>
 
     <item android:id="@+id/item_delete"
-        android:title=" "
-        android:icon="@drawable/ic_baseline_delete_24"
+        android:title="Xóa tin"
         app:showAsAction="never"/>
 
     <item android:id="@+id/item_hide_post"
-        android:title=" "
-        android:icon="@drawable/ic_eye_hide"
+        android:title="Ẩn tin "
         app:showAsAction="never"/>
 
 </menu>

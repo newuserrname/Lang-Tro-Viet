@@ -43,7 +43,7 @@ public class OnBoardActivity extends AppCompatActivity {
                 viewPager.setCurrentItem(viewPager.getCurrentItem()+1);
             } else {
                startActivity(new Intent(OnBoardActivity.this, AuthActivity.class));
-                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_left);
+                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_right);
                finish();
            }
         });

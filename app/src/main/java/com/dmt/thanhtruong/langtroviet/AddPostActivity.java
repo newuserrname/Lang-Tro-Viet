@@ -111,8 +111,8 @@ public class AddPostActivity extends AppCompatActivity {
                     post.setId(postObject.getInt("id"));
                     post.setTitle(postObject.getString("title"));
                     post.setAddress(postObject.getString("address"));
-                    post.setPrice(postObject.getInt("price"));
-                    post.setArea(postObject.getInt("area"));
+                    post.setPrice(postObject.getString("price"));
+                    post.setArea(postObject.getString("area"));
                     post.setPhone(postObject.getString("phone"));
                     post.setDescription(postObject.getString("description"));
                     post.setImages(postObject.getString("images"));
@@ -157,7 +157,7 @@ public class AddPostActivity extends AppCompatActivity {
                 map.put("price", txtPrice.getText().toString().trim());
                 map.put("area", txtArea.getText().toString().trim());
                 map.put("phone", txtPhone.getText().toString().trim());
-                map.put("description", txtPhone.getText().toString().trim());
+                map.put("description", txtDesc.getText().toString().trim());
                 map.put("images", bitmapToString(bitmap));
                 return map;
             }
@@ -169,7 +169,6 @@ public class AddPostActivity extends AppCompatActivity {
     }
 
     private String bitmapToString(Bitmap bitmap) {
-
 
         if (bitmap!= null) {
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();

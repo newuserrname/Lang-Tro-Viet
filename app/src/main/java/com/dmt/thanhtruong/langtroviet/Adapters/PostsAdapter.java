@@ -82,7 +82,10 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostsHolder>
                             Intent intent = new Intent((HomeActivity)context, EditPostActivity.class);
                             intent.putExtra("postId", post.getId());
                             intent.putExtra("position", position);
-                            intent.putExtra("text", post.getDescription());
+                            intent.putExtra("title", post.getTitle());
+                            intent.putExtra("address", post.getAddress());
+                            intent.putExtra("price", post.getPrice());
+                            intent.putExtra("area", post.getArea());
                             ((HomeActivity) context).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
                             context.startActivity(intent);
                             return true;
@@ -165,5 +168,6 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostsHolder>
             btnComment = itemView.findViewById(R.id.btnPostComment);
             btnPostOption.setVisibility(View.GONE);
         }
+
     }
 }
