@@ -13,6 +13,9 @@
         android:theme="@style/Theme.LangTroViet"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".EditPostActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddPostActivity"
             android:exported="false" />
         <activity
