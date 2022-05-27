@@ -1,7 +1,9 @@
 package com.dmt.thanhtruong.langtroviet.Adapters;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.view.LayoutInflater;
@@ -15,8 +17,15 @@ import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.dmt.thanhtruong.langtroviet.Constant;
 import com.dmt.thanhtruong.langtroviet.EditPostActivity;
 import com.dmt.thanhtruong.langtroviet.HomeActivity;
@@ -24,9 +33,14 @@ import com.dmt.thanhtruong.langtroviet.Models.Post;
 import com.dmt.thanhtruong.langtroviet.R;
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -91,7 +105,8 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostsHolder>
                             return true;
                         }
                         case R.id.item_delete: {
-
+                            deletePost(post.getId(),position);
+                            return true;
                         }
                         case R.id.item_hide_post: {
 
@@ -103,6 +118,61 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostsHolder>
             });
             popupMenu.show();
         });
+    }
+
+    private void deletePost(int postId, int posotion) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Confirm");
+        builder.setMessage("Bạn chắc chắn muốn xóa?");
+        builder.setPositiveButton("Đồng ý", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                StringRequest request = new StringRequest(Request.Method.POST,Constant.DELETE_POST,response -> {
+                    try {
+                        JSONObject object = new JSONObject(response);
+                        if (object.getBoolean("success")) {
+                            list.remove(posotion);
+                            notifyItemRemoved(posotion);
+                            notifyDataSetChanged();
+                            listAll.addAll(list);
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                }, error -> {
+
+                }) {
+                    @Override
+                    public Map<String, String> getHeaders() throws AuthFailureError {
+                        String token = preferences.getString("token", "");
+                        HashMap<String, String> map = new HashMap<>();
+                        map.put("Authorization","Bearer "+token);
+                        return map;
+                    }
+
+                    @Nullable
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        String token = preferences.getString("token", "");
+                        HashMap<String, String> map = new HashMap<>();
+                        map.put("id", postId+"");
+                        return map;
+                    }
+                };
+
+                RequestQueue queue = Volley.newRequestQueue(context);
+                queue.add(request);
+
+            }
+        });
+        builder.setNegativeButton("Hủy bỏ", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.show();
     }
 
     @Override
