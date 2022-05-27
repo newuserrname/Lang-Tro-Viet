@@ -1,18 +1,25 @@
 package com.dmt.thanhtruong.langtroviet.Adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.dmt.thanhtruong.langtroviet.Constant;
+import com.dmt.thanhtruong.langtroviet.EditPostActivity;
+import com.dmt.thanhtruong.langtroviet.HomeActivity;
 import com.dmt.thanhtruong.langtroviet.Models.Post;
 import com.dmt.thanhtruong.langtroviet.R;
 import com.squareup.picasso.Picasso;
@@ -28,11 +35,13 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostsHolder>
     private Context context;
     private ArrayList<Post> list;
     private ArrayList<Post> listAll;
+    private SharedPreferences preferences;
 
     public PostsAdapter(Context context, ArrayList<Post> list) {
         this.context = context;
         this.list = list;
         this.listAll = new ArrayList<>(list);
+        preferences = context.getApplicationContext().getSharedPreferences("user", Context.MODE_PRIVATE);
     }
 
     @NonNull
@@ -43,10 +52,10 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostsHolder>
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PostsHolder holder, int position) {
+    public void onBindViewHolder(@NonNull PostsHolder holder, @SuppressLint("RecyclerView") int position) {
         Post post = list.get(position);
-        Picasso.get().load(Constant.URL+"uploads/avatars/"+post.getUser().getAvatar()).into(holder.imgProfile);
-        Picasso.get().load(Constant.URL+"uploads/images/"+post.getImages()).into(holder.imgPost);
+        Picasso.get().load(Constant.URL+"public/uploads/avatars/"+post.getUser().getAvatar()).into(holder.imgProfile);
+        Picasso.get().load(Constant.URL+"public/uploads/images/"+post.getImages()).into(holder.imgPost);
         holder.txtNameProfile.setText(post.getUser().getName());
         holder.txtDate.setText(post.getDate());
         holder.txtTitle.setText(post.getTitle());
@@ -54,6 +63,43 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostsHolder>
         holder.txtArea.setText(post.getArea()+" m2");
         holder.txtAddress.setText(post.getAddress());
         holder.txtCount_view.setText(post.getCount_view()+" ");
+
+        if (post.getUser().getId()==preferences.getInt("id", 0)) {
+            holder.btnPostOption.setVisibility(View.VISIBLE);
+        } else {
+            holder.btnPostOption.setVisibility(View.GONE);
+        }
+
+        holder.btnPostOption.setOnClickListener(v->{
+            PopupMenu popupMenu = new PopupMenu(context, holder.btnPostOption);
+            popupMenu.inflate(R.menu.menu_post_options);
+            popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                @Override
+                public boolean onMenuItemClick(MenuItem item) {
+
+                    switch (item.getItemId()) {
+                        case R.id.item_edit: {
+                            Intent intent = new Intent((HomeActivity)context, EditPostActivity.class);
+                            intent.putExtra("postId", post.getId());
+                            intent.putExtra("position", position);
+                            intent.putExtra("text", post.getDescription());
+                            ((HomeActivity) context).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_right);
+                            context.startActivity(intent);
+                            return true;
+                        }
+                        case R.id.item_delete: {
+
+                        }
+                        case R.id.item_hide_post: {
+
+                        }
+                    }
+
+                    return false;
+                }
+            });
+            popupMenu.show();
+        });
     }
 
     @Override
@@ -117,6 +163,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostsHolder>
             btnPostOption = itemView.findViewById(R.id.btnPostOption);
             btnBookmask = itemView.findViewById(R.id.btnPostBookmark);
             btnComment = itemView.findViewById(R.id.btnPostComment);
+            btnPostOption.setVisibility(View.GONE);
         }
     }
 }
