@@ -49,7 +49,7 @@ public class AccountFragment extends Fragment {
     private View view;
     private MaterialToolbar toolbar;
     private CircleImageView imgProfile;
-    private TextView txtName, txtPostsCount;
+    private TextView txtName, txtPostsCount, txtPhone, txtNgaythamgia, txtAddress, txtEmail;
     private Button btnEditAccount;
     private RecyclerView recyclerView;
     private ArrayList arrayList;
@@ -73,6 +73,10 @@ public class AccountFragment extends Fragment {
         setHasOptionsMenu(true);
         imgProfile = view.findViewById(R.id.imgAccountProfile);
         txtName = view.findViewById(R.id.txtAccountName);
+        txtPhone = view.findViewById(R.id.txtAccountPhone);
+        txtNgaythamgia = view.findViewById(R.id.txtAccountNgaythamgia);
+        txtAddress = view.findViewById(R.id.txtAccountAddress);
+        txtEmail = view.findViewById(R.id.txtAccountEmail);
         txtPostsCount = view.findViewById(R.id.txtAccountPostCount);
         btnEditAccount = view.findViewById(R.id.btnEditAccount);
         getData();
@@ -91,7 +95,11 @@ public class AccountFragment extends Fragment {
                     }
                     JSONObject user = object.getJSONObject("user");
                     txtName.setText(user.getString("name"));
-                    txtPostsCount.setText(arrayList.size()+"");
+                    txtNgaythamgia.setText(user.getString("created_at"));
+                    txtAddress.setText(user.getString("diachi"));
+                    txtPhone.setText(user.getString("phone"));
+                    txtEmail.setText(user.getString("email"));
+                    txtPostsCount.setText(arrayList.size()+" ");
                     Picasso.get().load(Constant.URL+"public/uploads/avatars/"+user.getString("avatar")).into(imgProfile);
                 }
             } catch (JSONException e) {

@@ -77,6 +77,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostsHolder>
         holder.txtArea.setText(post.getArea()+" m2");
         holder.txtAddress.setText(post.getAddress());
         holder.txtCount_view.setText(post.getCount_view()+" ");
+        holder.txtComment.setText(post.getComments()+" ");
 
         if (post.getUser().getId()==preferences.getInt("id", 0)) {
             holder.btnPostOption.setVisibility(View.VISIBLE);

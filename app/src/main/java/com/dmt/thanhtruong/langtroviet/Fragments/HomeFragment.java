@@ -105,6 +105,7 @@ public class HomeFragment extends Fragment {
                         post.setPrice(postObject.getString("price"));
                         post.setArea(postObject.getString("area"));
                         post.setCount_view(postObject.getInt("count_view"));
+                        post.setComments(postObject.getInt("commentsCount"));
                         post.setImages(postObject.getString("images"));
                         post.setDate(postObject.getString("created_at"));
                         post.setSelfLike(postObject.getBoolean("selfLike"));
